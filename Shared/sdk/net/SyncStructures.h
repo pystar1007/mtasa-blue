@@ -227,7 +227,7 @@ struct SPositionSync : public ISyncStructure
         }
         else
         {
-            SFloatSync<14, 10> x, y;
+            SFloatSync<22, 10> x, y;
 
             if (bitStream.Read(&x) && bitStream.Read(&y) && bitStream.Read(data.vecPosition.fZ))
             {
@@ -252,7 +252,7 @@ struct SPositionSync : public ISyncStructure
         }
         else
         {
-            SFloatSync<14, 10> x, y;
+            SFloatSync<22, 10> x, y;
             x.data.fValue = data.vecPosition.fX;
             y.data.fValue = data.vecPosition.fY;
 
@@ -284,7 +284,7 @@ struct SPosition2DSync : public ISyncStructure
         }
         else
         {
-            SFloatSync<14, 10> x, y;
+            SFloatSync<22, 10> x, y;
 
             if (bitStream.Read(&x) && bitStream.Read(&y))
             {
@@ -308,7 +308,7 @@ struct SPosition2DSync : public ISyncStructure
         }
         else
         {
-            SFloatSync<14, 10> x, y;
+            SFloatSync<22, 10> x, y;
             x.data.fValue = data.vecPosition.fX;
             y.data.fValue = data.vecPosition.fY;
 
@@ -329,34 +329,83 @@ private:
 // Low precision positions:
 // - Write X and Y components bound to [-8192, 8192], with a max error of 0.25 units.
 // - Write Z bound to [-110, 1938], with a max error of 1 unit.
+//struct SLowPrecisionPositionSync : public ISyncStructure
+//{
+//    bool Read(NetBitStreamInterface& bitStream)
+//    {
+//        unsigned short usX;
+//        unsigned short usY;
+//        unsigned short usZ;
+//
+//        if (!bitStream.Read(usX) || !bitStream.Read(usY) || !bitStream.ReadBits(reinterpret_cast<char*>(&usZ), 11))
+//            return false;
+//        data.vecPosition.fX = 16384.0f * (usX / 65535.0f) - 8192.0f;
+//        data.vecPosition.fY = 16384.0f * (usY / 65535.0f) - 8192.0f;
+//        data.vecPosition.fZ = static_cast<float>(usZ) - 110.0f;
+//        return true;
+//    }
+//
+//    void Write(NetBitStreamInterface& bitStream) const
+//    {
+//        float fX = SharedUtil::Clamp(-8192.0f, data.vecPosition.fX, 8192.0f);
+//        float fY = SharedUtil::Clamp(-8192.0f, data.vecPosition.fY, 8192.0f);
+//        float fZ = SharedUtil::Clamp(-110.0f, data.vecPosition.fZ, 2048.0f - 110.0f);
+//
+//        unsigned short usX = static_cast<unsigned short>(((fX + 8192.0f) / 16384.0f) * 65535.0f);
+//        unsigned short usY = static_cast<unsigned short>(((fY + 8192.0f) / 16384.0f) * 65535.0f);
+//        unsigned short usZ = static_cast<unsigned short>(fZ + 110.0f);
+//
+//        bitStream.Write(usX);
+//        bitStream.Write(usY);
+//        bitStream.WriteBits(reinterpret_cast<const char*>(&usZ), 11);
+//    }
+//
+//    struct
+//    {
+//        CVector vecPosition;
+//    } data;
+//};
+
+// Low precision positions:
+// - Write X and Y components bound to [-2097152, 2097152], with a max error of 0.25 units.
+// - Write Z bound to [-110, 1938], with a max error of 1 unit.
 struct SLowPrecisionPositionSync : public ISyncStructure
 {
     bool Read(NetBitStreamInterface& bitStream)
     {
-        unsigned short usX;
-        unsigned short usY;
-        unsigned short usZ;
+        unsigned int   usX;            // 22 bits
+        unsigned int   usY;            // 22 bits
+        unsigned short usZ;            // 11 bits
 
-        if (!bitStream.Read(usX) || !bitStream.Read(usY) || !bitStream.ReadBits(reinterpret_cast<char*>(&usZ), 11))
+        // Adjust the bit reading to match new bit sizes
+        if (!bitStream.ReadBits(reinterpret_cast<char*>(&usX), 22) || !bitStream.ReadBits(reinterpret_cast<char*>(&usY), 22) ||
+            !bitStream.ReadBits(reinterpret_cast<char*>(&usZ), 11))
+        {
             return false;
-        data.vecPosition.fX = 16384.0f * (usX / 65535.0f) - 8192.0f;
-        data.vecPosition.fY = 16384.0f * (usY / 65535.0f) - 8192.0f;
+        }
+
+        // Convert from unsigned to float with new scale and range
+        data.vecPosition.fX = 4194304.0f * (usX / 4194303.0f) - 2097152.0f;
+        data.vecPosition.fY = 4194304.0f * (usY / 4194303.0f) - 2097152.0f;
         data.vecPosition.fZ = static_cast<float>(usZ) - 110.0f;
         return true;
     }
 
     void Write(NetBitStreamInterface& bitStream) const
     {
-        float fX = SharedUtil::Clamp(-8192.0f, data.vecPosition.fX, 8192.0f);
-        float fY = SharedUtil::Clamp(-8192.0f, data.vecPosition.fY, 8192.0f);
+        // Clamp to the new range
+        float fX = SharedUtil::Clamp(-2097152.0f, data.vecPosition.fX, 2097152.0f);
+        float fY = SharedUtil::Clamp(-2097152.0f, data.vecPosition.fY, 2097152.0f);
         float fZ = SharedUtil::Clamp(-110.0f, data.vecPosition.fZ, 2048.0f - 110.0f);
 
-        unsigned short usX = static_cast<unsigned short>(((fX + 8192.0f) / 16384.0f) * 65535.0f);
-        unsigned short usY = static_cast<unsigned short>(((fY + 8192.0f) / 16384.0f) * 65535.0f);
+        // Scale and convert to unsigned
+        unsigned int   usX = static_cast<unsigned int>(((fX + 2097152.0f) / 4194304.0f) * 4194303.0f);
+        unsigned int   usY = static_cast<unsigned int>(((fY + 2097152.0f) / 4194304.0f) * 4194303.0f);
         unsigned short usZ = static_cast<unsigned short>(fZ + 110.0f);
 
-        bitStream.Write(usX);
-        bitStream.Write(usY);
+        // Write bits to the stream
+        bitStream.WriteBits(reinterpret_cast<const char*>(&usX), 22);
+        bitStream.WriteBits(reinterpret_cast<const char*>(&usY), 22);
         bitStream.WriteBits(reinterpret_cast<const char*>(&usZ), 11);
     }
 
