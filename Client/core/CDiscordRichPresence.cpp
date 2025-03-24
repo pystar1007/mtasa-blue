@@ -13,11 +13,11 @@
 #include "discord_rpc.h"
 #include "CDiscordRichPresence.h"
 
-constexpr char DEFAULT_APP_ID[] = "468493322583801867";
-constexpr char DEFAULT_APP_ASSET[] = "mta_logo_round";
-constexpr char DEFAULT_APP_ASSET_TEXT[] = "Multi Theft Auto";
+constexpr char DEFAULT_APP_ID[] = "1202291938393325659";
+constexpr char DEFAULT_APP_ASSET[] = "eclipselauncher";
+constexpr char DEFAULT_APP_ASSET_TEXT[] = "Eclipse Launcher";
 constexpr char DEFAULT_APP_ASSET_SMALL[] = "";
-constexpr char DEFAULT_APP_ASSET_SMALL_TEXT[] = "";
+constexpr char DEFAULT_APP_ASSET_SMALL_TEXT[] = "Project Eagle";
 
 CDiscordRichPresence::CDiscordRichPresence() : m_uiDiscordAppStart(0), m_uiDiscordAppEnd(0)
 {
