@@ -456,11 +456,11 @@ msgstr ""
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Probleem MTA:SA taaskäivitamisel\n\n"
 "Kui probleem jätkub siis avage Task Manager ja\n"
-"lõpetage 'gta_sa.exe' ning 'Multi Theft Auto.exe' protsessid\n\n\n"
+"lõpetage 'gta_sa.exe' ning 'Eclipse.exe' protsessid\n\n\n"
 "Kas avan MTA:SA uuesti?"
 
 #: Client/loader/MainFunctions.cpp:266

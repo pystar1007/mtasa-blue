@@ -461,11 +461,11 @@ msgstr "Atnaujinti suderinamumo nustatymus"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Problema paleidžiant MTA:SA\n\n"
 "Jei problema kartosis, atidarykite užduočių tvarkyklę ir\n"
-"sustabdykite 'gta_sa.exe' bei 'Multi Theft Auto.exe' procesus\n\n\n"
+"sustabdykite 'gta_sa.exe' bei 'Eclipse.exe' procesus\n\n\n"
 "Ar norite pabandyti paleisti MTA:SA dar kartą?"
 
 #: Client/loader/MainFunctions.cpp:266

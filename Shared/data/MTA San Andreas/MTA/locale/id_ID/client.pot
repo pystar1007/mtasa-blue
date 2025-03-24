@@ -466,11 +466,11 @@ msgstr "Perbarui pengaturan kompatibilitas"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Masalah saat memulai ulang MTA:SA\n\n"
 "Apabila masalahnya berlanjut, buka Manajer Tugas dan\n"
-"akhiri proses 'gta_sa.exe' dan 'Multi Theft Auto.exe'\n\n\n"
+"akhiri proses 'gta_sa.exe' dan 'Eclipse.exe'\n\n\n"
 "Coba luncurkan MTA:SA lagi?"
 
 #: Client/loader/MainFunctions.cpp:266

@@ -267,14 +267,6 @@ CMainMenu::CMainMenu(CGUI* pManager)
 
         m_pNewsItemDateLabels[i] = pItemDate;
 
-        // Create 'NEW' sticker
-        CGUILabel*& pLabel = m_pNewsItemNEWLabels[i];
-        pLabel = reinterpret_cast<CGUILabel*>(pManager->CreateLabel(m_pCanvas, "NEW"));
-        pLabel->SetFont("default-small");
-        pLabel->SetTextColor(255, 0, 0);
-        pLabel->AutoSize(pLabel->GetText().c_str());
-        pLabel->SetAlpha(0.7f);
-        pLabel->SetVisible(false);
     }
 
     m_pLogo->MoveToBack();

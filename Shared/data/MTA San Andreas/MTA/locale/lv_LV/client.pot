@@ -466,11 +466,11 @@ msgstr "Atjaunot saderības uzstādījumus"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Kļūda restartējot MTA:SA\n\n"
 "Ja problēma atkartojās, atveriet Uzdevumu Pārvaldnieku un\n"
-"apstādiniet 'gta_sa.exe' un 'Multi Theft Auto.exe' procesus\n\n\n"
+"apstādiniet 'gta_sa.exe' un 'Eclipse.exe' procesus\n\n\n"
 "Mēģināt palaist MTA:SA vēlreiz?"
 
 #: Client/loader/MainFunctions.cpp:266

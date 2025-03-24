@@ -466,11 +466,11 @@ msgstr "Ažuriraj opcije kompatibilnosti"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Imamo teškoće u restartovanju MTA:SA\n\n"
 "Ako se problem nastavi, otvorite Task Manager\n"
-"izaustavite 'gta_sa.exe' i 'Multi Theft Auto.exe' procese\n\n\n"
+"izaustavite 'gta_sa.exe' i 'Eclipse.exe' procese\n\n\n"
 "Da li da pokušamo da otvorimo MTA:SA ponovo?"
 
 #: Client/loader/MainFunctions.cpp:266

@@ -460,11 +460,11 @@ msgstr "Cập nhật cài đặt tương thích"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Lỗi khi khởi động lại MTA:SA\n\n"
 "Nếu vẫn còn bị lỗi, hãy mở Task Manager và\n"
-"tắt(stop) 'gta_sa.exe' và 'Multi Theft Auto.exe'\n\n\n"
+"tắt(stop) 'gta_sa.exe' và 'Eclipse.exe'\n\n\n"
 "Sau đó thử chạy lại MTA:SA?"
 
 #: Client/loader/MainFunctions.cpp:266

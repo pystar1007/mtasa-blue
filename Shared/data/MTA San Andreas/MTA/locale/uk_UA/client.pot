@@ -461,10 +461,10 @@ msgstr "Оновити налаштування сумісності"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Проблема перезапуску MTA:SA\n\n"
-"Якщо проблема збереглася, то відкрийте диспетчер завдань і зупиніть процеси 'gta_sa.exe' і 'Multi Theft Auto.exe' \n\n\n"
+"Якщо проблема збереглася, то відкрийте диспетчер завдань і зупиніть процеси 'gta_sa.exe' і 'Eclipse.exe' \n\n\n"
 "Спробувати запустити MTA:SA знову?"
 
 #: Client/loader/MainFunctions.cpp:266

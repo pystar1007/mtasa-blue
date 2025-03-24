@@ -466,7 +466,7 @@ msgstr "호환성 설정 업데이트"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "MTA:SA를 다시 시작하는 동안 문제가 발생했습니다.\n\n"
 "문제가 지속되면 작업 관리자를 열고\n"

@@ -460,11 +460,11 @@ msgstr "Αναβάθμιση ρυθμίσεων συμβατότητας"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Πρόβλημα επανεκκίνησης του MTA:SΑ\n\n"
 "Εάν το πρόβλημα παραμένει, ανοίξτε τη Διαχείριση Εργασιών και\n"
-"σταματήστε τις διαδικασίες 'gta_sa.exe' και 'Multi Theft Auto.exe'\n\n\n"
+"σταματήστε τις διαδικασίες 'gta_sa.exe' και 'Eclipse.exe'\n\n\n"
 "Προσπαθήστε να ξεκινήσετε ξανά το MTA:SA;"
 
 #: Client/loader/MainFunctions.cpp:266

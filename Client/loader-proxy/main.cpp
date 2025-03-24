@@ -32,7 +32,7 @@ constexpr std::wstring_view MTA_EXE_NAME = L"Multi Theft Auto_d.exe";
 constexpr std::wstring_view CORE_DLL_NAME = L"core_d.dll";
 constexpr std::wstring_view NETC_DLL_NAME = L"netc_d.dll";
 #else
-constexpr std::wstring_view MTA_EXE_NAME = L"Multi Theft Auto.exe";
+constexpr std::wstring_view MTA_EXE_NAME = L"Eclipse.exe";
 constexpr std::wstring_view CORE_DLL_NAME = L"core.dll";
 constexpr std::wstring_view NETC_DLL_NAME = L"netc.dll";
 #endif

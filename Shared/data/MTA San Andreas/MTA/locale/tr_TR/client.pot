@@ -466,11 +466,11 @@ msgstr "Uyumluluk ayarlarını güncelle"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "MTA:SA yeniden başlatılırken hata oluştu\n\n"
 "Bu problem tekrar ederse, Görev Yöneticisini açın ve\n"
-"'gta_sa.exe' ve 'Multi Theft Auto.exe' işlemlerini durdurun.\n\n\n"
+"'gta_sa.exe' ve 'Eclipse.exe' işlemlerini durdurun.\n\n\n"
 "MTA:SA'yı tekrar başlatmak istiyor musunuz?"
 
 #: Client/loader/MainFunctions.cpp:266

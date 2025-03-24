@@ -475,7 +475,7 @@ SString CInstallManager::_CheckOnRestartCommand()
 //////////////////////////////////////////////////////////
 SString CInstallManager::_MaybeSwitchToTempExe()
 {
-    // If a new "Multi Theft Auto.exe" exists, let that complete the install
+    // If a new "Eclipse.exe" exists, let that complete the install
     if (m_pSequencer->GetVariable(INSTALL_LOCATION) == "far")
     {
         ReleaseSingleInstanceMutex();

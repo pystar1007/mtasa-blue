@@ -468,11 +468,11 @@ msgstr "Zmień ustawienia zgodności"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "Problem ze zrestartowaniem MTA:SA\n\n"
 "Jeśli problem się powtarza, otwórz Menedżer Zadań\n"
-"i zatrzymaj procesy 'gta_sa.exe' i 'Multi Theft Auto.exe'\n\n\n"
+"i zatrzymaj procesy 'gta_sa.exe' i 'Eclipse.exe'\n\n\n"
 "Czy chcesz zrestartować MTA:SA jeszcze raz?"
 
 #: Client/loader/MainFunctions.cpp:266

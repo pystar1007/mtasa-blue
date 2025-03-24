@@ -466,11 +466,11 @@ msgstr "Uyğunluq seçimlərini yenilə"
 #: Client/loader/MainFunctions.cpp:248
 msgid "Trouble restarting MTA:SA\n\n"
 "If the problem persists, open Task Manager and\n"
-"stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
+"stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
 "Try to launch MTA:SA again?"
 msgstr "MTA: SA başlarkən problem yarandı\n\n"
 "Problem davam edərsə, Tapşırıq Menecerini açın və\n"
-"'gta_sa.exe' və 'Multi Theft Auto.exe' proseslərini dayandırın\n\n"
+"'gta_sa.exe' və 'Eclipse.exe' proseslərini dayandırın\n\n"
 "MTA:SA-nı yenidən işə salmaq istəyirsiniz?"
 
 #: Client/loader/MainFunctions.cpp:266
