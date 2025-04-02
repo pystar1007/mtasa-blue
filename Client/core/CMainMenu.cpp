@@ -19,10 +19,10 @@
 #define NATIVE_RES_Y    1024.0f
 
 #define NATIVE_BG_X     1280.0f
-#define NATIVE_BG_Y     649.0f
+#define NATIVE_BG_Y     1024.0f
 
-#define NATIVE_LOGO_X     1058.0f
-#define NATIVE_LOGO_Y     540.0f
+#define NATIVE_LOGO_X     0.0f
+#define NATIVE_LOGO_Y     0.0f
 
 #define CORE_MTA_MENUITEMS_START_X  0.168
 
@@ -165,8 +165,8 @@ CMainMenu::CMainMenu(CGUI* pManager)
     m_pVersion = reinterpret_cast<CGUIStaticImage*>(pManager->CreateStaticImage());
     m_pVersion->LoadFromFile(CORE_MTA_VERSION);
     m_pVersion->SetParent(m_pCanvas);
-    m_pVersion->SetPosition(CVector2D(0.855f, 0.512f), true);
-    m_pVersion->SetSize(CVector2D((32 / NATIVE_RES_X) * m_iMenuSizeX, (32 / NATIVE_RES_Y) * m_iMenuSizeY), false);
+    m_pVersion->SetPosition(CVector2D(0.1f, 0.1f), true);
+    m_pVersion->SetSize(CVector2D((1 / NATIVE_RES_X) * m_iMenuSizeX, (1 / NATIVE_RES_Y) * m_iMenuSizeY), false);
     m_pVersion->SetProperty("InheritsAlpha", "False");
 
     float fBase = 0.613f;
@@ -179,12 +179,9 @@ CMainMenu::CMainMenu(CGUI* pManager)
     // Filepath, Relative position, absolute native size
     // And the font for the graphics is ?
     m_menuItems.push_back(CreateItem(MENU_ITEM_QUICK_CONNECT, "menu_quick_connect.png", CVector2D(0.168f, fBase + fGap * 0)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_BROWSE_SERVERS, "menu_browse_servers.png", CVector2D(0.168f, fBase + fGap * 1)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_HOST_GAME, "menu_host_game.png", CVector2D(0.168f, fBase + fGap * 2)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_MAP_EDITOR, "menu_map_editor.png", CVector2D(0.168f, fBase + fGap * 3)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_SETTINGS, "menu_settings.png", CVector2D(0.168f, fBase + fGap * 4)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_ABOUT, "menu_about.png", CVector2D(0.168f, fBase + fGap * 5)));
-    m_menuItems.push_back(CreateItem(MENU_ITEM_QUIT, "menu_quit.png", CVector2D(0.168f, fBase + fGap * 6)));
+    m_menuItems.push_back(CreateItem(MENU_ITEM_SETTINGS, "menu_settings.png", CVector2D(0.168f, fBase + fGap * 1)));
+    m_menuItems.push_back(CreateItem(MENU_ITEM_ABOUT, "menu_about.png", CVector2D(0.168f, fBase + fGap * 2)));
+    m_menuItems.push_back(CreateItem(MENU_ITEM_QUIT, "menu_quit.png", CVector2D(0.168f, fBase + fGap * 3)));
 
     // We store the position of the top item, and the second item.  These will be useful later
     float fFirstItemSize = m_menuItems.front()->image->GetSize(false).fY;
@@ -223,17 +220,17 @@ CMainMenu::CMainMenu(CGUI* pManager)
     float fDrawSizeX = (vecNativeSize.fX / NATIVE_RES_X) * m_iMenuSizeX;
     float fDrawSizeY = (vecNativeSize.fY / NATIVE_RES_Y) * m_iMenuSizeY;
     m_pLatestNews->SetSize(CVector2D(fDrawSizeX, fDrawSizeY), false);
-    float fDrawPosX = 0.83f * m_iMenuSizeX - fDrawSizeX;            // Right aligned
-    float fDrawPosY = 0.61f * m_iMenuSizeY;
+    float fDrawPosX = 0.0f * m_iMenuSizeX - fDrawSizeX;            // Right aligned
+    float fDrawPosY = 0.0f * m_iMenuSizeY;
     m_pLatestNews->SetPosition(CVector2D(fDrawPosX, fDrawPosY), false);
     m_pLatestNews->SetVisible(false);
 
     // Create news item stuff
-    fDrawPosX -= 25;
-    fDrawPosY += fDrawSizeY + 3;
+    fDrawPosX -= 0;
+    fDrawPosY += fDrawSizeY + 0;
     for (uint i = 0; i < CORE_MTA_NEWS_ITEMS; i++)
     {
-        fDrawPosY += 20;
+        fDrawPosY += 0;
         // Create our shadow and item
         CGUILabel* pItemShadow = reinterpret_cast<CGUILabel*>(m_pManager->CreateLabel(m_pCanvas, " "));
         CGUILabel* pItem = reinterpret_cast<CGUILabel*>(m_pManager->CreateLabel(m_pCanvas, " "));
@@ -243,13 +240,13 @@ CMainMenu::CMainMenu(CGUI* pManager)
         pItem->SetHorizontalAlign(CGUI_ALIGN_RIGHT);
         pItemShadow->SetHorizontalAlign(CGUI_ALIGN_RIGHT);
 
-        pItem->SetSize(CVector2D(fDrawSizeX, 14), false);
-        pItemShadow->SetSize(CVector2D(fDrawSizeX, 15), false);
+        pItem->SetSize(CVector2D(fDrawSizeX, 1), false);
+        pItemShadow->SetSize(CVector2D(fDrawSizeX, 1), false);
 
         pItem->SetPosition(CVector2D(fDrawPosX, fDrawPosY), false);
         pItemShadow->SetPosition(CVector2D(fDrawPosX + 1, fDrawPosY + 1), false);
 
-        pItemShadow->SetTextColor(112, 112, 112);
+        pItemShadow->SetTextColor(0, 0, 0);
 
         // Set the handlers
         pItem->SetClickHandler(GUI_CALLBACK(&CMainMenu::OnNewsButtonClick, this));
@@ -259,7 +256,7 @@ CMainMenu::CMainMenu(CGUI* pManager)
         m_pNewsItemShadowLabels[i] = pItemShadow;
 
         // Create our date label
-        fDrawPosY += 15;
+        fDrawPosY += 0;
         CGUILabel* pItemDate = reinterpret_cast<CGUILabel*>(m_pManager->CreateLabel(m_pCanvas, " "));
 
         pItemDate->SetFont("default-small");
@@ -270,14 +267,6 @@ CMainMenu::CMainMenu(CGUI* pManager)
 
         m_pNewsItemDateLabels[i] = pItemDate;
 
-        // Create 'NEW' sticker
-        CGUILabel*& pLabel = m_pNewsItemNEWLabels[i];
-        pLabel = reinterpret_cast<CGUILabel*>(pManager->CreateLabel(m_pCanvas, "NEW"));
-        pLabel->SetFont("default-small");
-        pLabel->SetTextColor(255, 0, 0);
-        pLabel->AutoSize(pLabel->GetText().c_str());
-        pLabel->SetAlpha(0.7f);
-        pLabel->SetVisible(false);
     }
 
     m_pLogo->MoveToBack();
@@ -1160,10 +1149,6 @@ void CMainMenu::SetNewsHeadline(int iIndex, const SString& strHeadline, const SS
     CGUILabel* pItemDate = m_pNewsItemDateLabels[iIndex];
     pItemDate->SetText(strDate);
 
-    // 'NEW' sticker
-    CGUILabel* pNewLabel = m_pNewsItemNEWLabels[iIndex];
-    pNewLabel->SetVisible(bIsNew);
-    pNewLabel->SetPosition(CVector2D(pItem->GetPosition().fX + 4, pItem->GetPosition().fY - 4));
 }
 
 void CMainMenu::ReloadNews()
