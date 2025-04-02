@@ -17,7 +17,7 @@ constexpr char DEFAULT_APP_ID[] = "1202291938393325659";
 constexpr char DEFAULT_APP_ASSET[] = "eclipselauncher";
 constexpr char DEFAULT_APP_ASSET_TEXT[] = "Eclipse Launcher";
 constexpr char DEFAULT_APP_ASSET_SMALL[] = "";
-constexpr char DEFAULT_APP_ASSET_SMALL_TEXT[] = "Project Eagle";
+constexpr char DEFAULT_APP_ASSET_SMALL_TEXT[] = "";
 
 CDiscordRichPresence::CDiscordRichPresence() : m_uiDiscordAppStart(0), m_uiDiscordAppEnd(0)
 {

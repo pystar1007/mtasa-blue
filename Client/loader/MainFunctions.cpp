@@ -247,7 +247,7 @@ void HandleDuplicateLaunching()
                 strMessage +=
                     _("Trouble restarting MTA:SA\n\n"
                       "If the problem persists, open Task Manager and\n"
-                      "stop the 'gta_sa.exe' and 'Eclipse.exe' processes\n\n\n"
+                      "stop the 'gta_sa.exe' and 'Multi Theft Auto.exe' processes\n\n\n"
                       "Try to launch MTA:SA again?");
                 if (MessageBoxUTF8(0, strMessage, _("Error") + _E("CL04"), MB_ICONWARNING | MB_YESNO | MB_TOPMOST) ==
                     IDYES)            // Trouble restarting MTA:SA
@@ -898,6 +898,17 @@ void CheckDataFiles()
         }
     }
 
+    // Check for asi files
+    {
+        bool bFoundInGTADir = !FindFiles(PathJoin(strGTAPath, "*.asi"), true, false).empty();
+        bool bFoundInMTADir = !FindFiles(PathJoin(strMTASAPath, "mta", "*.asi"), true, false).empty();
+        if (bFoundInGTADir || bFoundInMTADir)
+        {
+            DisplayErrorMessageBox(_(".asi files are in the 'MTA:SA' or 'GTA: San Andreas' installation directory.\n\n"
+                                     "Remove these .asi files if you experience problems with MTA:SA."),
+                                   _E("CL28"), "asi-files");
+        }
+    }
 
     // Check for graphics libraries in the GTA/MTA install directory
     {
