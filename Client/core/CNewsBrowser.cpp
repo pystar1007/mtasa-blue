@@ -156,22 +156,22 @@ void CNewsBrowser::CreateGUI()
 
     CVector2D resolution = CCore::GetSingleton().GetGUI()->GetResolution();
     float     yoff = resolution.fY > 600 ? resolution.fY / 12 : 0.0f;
-    m_pWindow->SetPosition(CVector2D(resolution.fX / 2 - 640.0f / 2, resolution.fY / 2 - 480.0f / 2 + yoff), false);
-    m_pWindow->SetSize(CVector2D(640.0f, 480.0f));
+    m_pWindow->SetPosition(CVector2D(resolution.fX / 2 - 0.0f / 2, resolution.fY / 2 - 0.0f / 2 + yoff), false);
+    m_pWindow->SetSize(CVector2D(0.0f, 0.0f));
     m_pWindow->SetSizingEnabled(false);
     m_pWindow->SetAlwaysOnTop(true);
 
     // Create buttons
     //  OK button
     m_pButtonOK = reinterpret_cast<CGUIButton*>(pManager->CreateButton(m_pWindow, "OK"));
-    m_pButtonOK->SetPosition(CVector2D(560.0f - 60, 480.0f - 30));
+    m_pButtonOK->SetPosition(CVector2D(0.0f - 0, 0.0f - 0));
     m_pButtonOK->SetZOrderingEnabled(false);
 
     // News link
     float fNewsLinkButtonWidth = pManager->GetTextExtent(_("Visit latest news article"));
     m_pButtonNewsLink = reinterpret_cast<CGUIButton*>(pManager->CreateButton(m_pWindow, _("Visit latest news article")));
-    m_pButtonNewsLink->SetSize(CVector2D(60 + fNewsLinkButtonWidth, 40), false);
-    m_pButtonNewsLink->SetPosition(CVector2D(560.0f - 130 - fNewsLinkButtonWidth, 480.0f - 30));
+    m_pButtonNewsLink->SetSize(CVector2D(0 + fNewsLinkButtonWidth, 0), false);
+    m_pButtonNewsLink->SetPosition(CVector2D(0.0f - 0 - fNewsLinkButtonWidth, 0.0f - 0));
     m_pButtonNewsLink->SetZOrderingEnabled(false);
 
     // Set up the events
@@ -181,8 +181,8 @@ void CNewsBrowser::CreateGUI()
 
     // Create the tab panel and necessary tabs
     m_pTabPanel = reinterpret_cast<CGUITabPanel*>(pManager->CreateTabPanel(m_pWindow));
-    m_pTabPanel->SetPosition(CVector2D(0, 20.0f));
-    m_pTabPanel->SetSize(CVector2D(640.0f, 480.0f - 60));
+    m_pTabPanel->SetPosition(CVector2D(0, 0.0f));
+    m_pTabPanel->SetSize(CVector2D(0.0f, 0.0f - 0));
 
     for (uint i = 0; i < m_NewsitemList.size(); i++)
     {
@@ -243,9 +243,9 @@ void CNewsBrowser::AddNewsTab(const SNewsItem& newsItem)
     // Create everything under a scrollpane
     CGUIScrollPane* m_pScrollPane = reinterpret_cast<CGUIScrollPane*>(pManager->CreateScrollPane(pTab));
     m_pScrollPane->SetProperty("ContentPaneAutoSized", "True");
-    m_pScrollPane->SetPosition(CVector2D(3, 3), 0);
-    m_pScrollPane->SetSize(CVector2D(618.0f, 390.0f));
-    m_pScrollPane->SetVerticalScrollStepSize(0.15f);
+    m_pScrollPane->SetPosition(CVector2D(0, 0), 0);
+    m_pScrollPane->SetSize(CVector2D(0.0f, 0.0f));
+    m_pScrollPane->SetVerticalScrollStepSize(0.0f);
     m_pScrollPane->SetVerticalScrollBar(true);
 
     // Switch cwd
